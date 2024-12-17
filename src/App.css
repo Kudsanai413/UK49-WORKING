@@ -139,6 +139,7 @@ main
 				height: 30px;
 				border: none;
 				margin-right: 15px;
+				background-color: white;
 
 				&&:focus
 				{
