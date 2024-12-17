@@ -1,38 +1,438 @@
-.App {
-  text-align: center;
+*
+{
+  margin: 0;
+  padding: 0;
+  font-family: "Yu Mincho Light";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body
+{
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+#root {
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 501px)
+{
+  /* #root
+  {
+    width: 500px;
+	overflow-y: scroll;
+    border-radius: 20px;
+	margin: 10px auto;
+
+    && > header
+    {
+      border-radius: 20px 20px 0 0;
+    }
+  } */
+}
+
+
+
+header
+{
+  width: 100%;
+  align-items: stretch;
+  height: 85px;
+  background-color: rgb(0, 0, 143);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  && > h1
+  {
+      text-align: left;
+      font-size: 22px;
+      color: white;
+      margin-left: 10px;
+
+      && > span
+      {
+          color: red;
+      }
   }
-  to {
-    transform: rotate(360deg);
+
+  && > button
+  {
+	width: 90px;
+	height: 40px;
+	background-color: #fff;
+	border: none;
+	border-radius: 40px;
+	margin-right: 10px;
+	color:rgb(0, 0, 143);
   }
+
+
+  && > .search-bar
+  {
+      width: 200px;
+      height: 40px;
+      border: none;
+      border-radius: 40px;
+      text-align: center;
+      margin-right: 10px;
+      background-color: transparent;
+      &&:focus
+      {
+          outline: none;
+          border: 1px solid white
+      }
+  }
+}
+
+
+
+main
+{
+	min-width: 99%;
+	max-width: 99%;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: inherit;
+	align-items: inherit;;
+
+	&& >  #input
+	{
+		width: 99%;
+		height: 200px;
+		background-color: #fff;
+		display: flex;
+		flex-direction: inherit;
+		justify-content: space-evenly;
+		border-radius: 0 0 20px 20px;
+		box-shadow: 0 0 2px black;
+		margin-bottom: 20px;
+
+		&& > div
+		{
+			width: 99%;
+			display: flex;
+			justify-content: space-between;
+			position: relative;
+			&& > span
+			{
+				margin-left: 10px;
+				font-size: 18px;
+				color: rgb(0, 0, 143);
+			}
+
+			&& > select,  && > input
+			{
+				width: 100px;
+				height: 30px;
+				border: none;
+				margin-right: 15px;
+
+				&&:focus
+				{
+					outline: none;
+				}
+
+				&& > option
+				{
+					background-color: rgba(0, 0, 150, 0.5);
+					&&:focus
+					{
+						background: #000;
+					}
+				}
+			}
+
+			&& > input
+			{
+				position: absolute;
+				top: -20px;
+				left: 40%;
+			}
+		}
+
+		&& > input
+		{
+			width: 80%;
+			height: 40px;
+			align-self: center;
+			border-radius: 5px;
+			border: 1px solid rgb(0, 0, 143);
+			color: rgb(0, 0, 143);
+			text-align: center;
+
+			&&:focus
+			{
+				outline: none;
+			}
+		}
+
+		&& > button
+		{
+			width: 90px;
+			height: 40px;
+			align-self: center;
+			background-color: rgb(0, 0, 143);
+			color: white;
+			border-radius: 7px;
+			border: none;
+		}
+	}
+
+	&& > #workings
+	{
+		display: flex;
+		max-width: 99%;
+		min-width: 90%;
+		min-height:200px;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+
+		&& > .row
+		{
+			display: flex;
+			margin: 3px 0 0 0;
+			align-self: self-start;
+
+			&& > .ball
+			{
+				min-width: 35px;
+				max-width: 35px;
+				min-height: 35px;
+				max-height: 35px;
+				border-radius: 50%;
+				box-shadow: 5px 5px 15px inset blueviolet;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-left: 7px;
+				border-width: 0.2px;
+				border-style: solid;
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+#skeleton
+{
+	width: 98%;
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 5px black;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	background-color: rgb(0, 0, 143, 0.4);
+
+	&&:last-child
+	{
+		margin-bottom: 10px;
+	}
+
+	&& > div
+	{
+		height: 25px;
+		background-color: rgb(255, 255, 255);
+		margin: 10px 10px;
+		border-radius: 33px;
+
+		&&:first-child{ width: 90%}
+		&&:nth-child(2){ width: 70%}
+		&&:nth-child(3){ width: 50%}
+		&&:nth-child(4){ width: 30%}
+	}
+}
+
+
+#results-skeleton
+{
+	max-width: 98%;
+	height: 40px;
+	border-radius: 5px;
+	display: flex;
+}
+
+#disclaimer
+{
+	width: 85%;
+	height: 450px;
+	position: fixed;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(0, 0, 145, 0.85);
+	left: 7.5%;
+	top: 150px;
+	backdrop-filter: blur(15px);
+	border-radius: 10px;
+	color: white;
+
+	&& h3
+	{
+		display: flex;
+		align-items: center;
+
+		&& b
+		{
+			position: absolute;
+			right: 5px;
+			font-size: x-large;
+		}
+	}
+
+	&& > span
+	{
+		width: 90%;
+		font-size: 16px;
+		text-align: center;
+		border: 1px solid black;
+		box-shadow: 0px 0px 5px black;
+		border-radius: 10px;
+
+		&&:last-child
+		{
+			margin-bottom: 15px;
+		}
+	}
+
+	&& > button
+	{
+		width: 80px;
+		height: 35px;
+	}
+}
+
+#history
+{
+	max-width: 400px;
+	min-width: 95%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	/* display:none; */
+
+	&& > h3
+	{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: rgb(0, 0, 143);
+		&& > div
+		{
+			width: 120px;
+			height: 2px;
+			background: rgb(0, 0, 143);
+		}
+	}
+	&& > .row.history
+	{
+		max-width: 350px;
+		min-width: 96%;
+		display: flex;
+		align-items: center;
+		margin: 10px auto;
+		align-self: self-start;
+		min-height: 85px;
+		box-shadow: 0 0 5px rgb(0, 0, 143);
+		border-radius: 10px;
+		position: relative;
+
+		&& > #date-time
+		{
+			position: absolute;
+			top:0;
+			right: 20px;
+			font-size: 12px;
+		}
+
+		&&>.ball {
+			min-width: 35px;
+			max-width: 35px;
+			min-height: 35px;
+			max-height: 35px;
+			border-radius: 50%;
+			box-shadow: 5px 5px 15px inset blueviolet;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-left: 2.5px;
+			border-width: 0.15px;
+			border-style: solid;
+			font-size: 21px;
+		}
+
+		&& > button
+		{
+			width: 50px;
+			height: 35px;
+			position: absolute;
+			right:5px;
+			border-radius: 10px;
+			border: none;
+			background-color: rgb(0, 0, 143);
+			color: white;
+		}
+	}
+
+
+}
+
+
+.history-workings
+{
+	min-width: 94%;
+	max-width: 96%;
+	display: none;
+	flex-direction: column;
+	justify-content: space-evenly;
+	box-shadow: 0px 0px 7px black;
+	margin: 0 auto 10px;
+	padding: 10px 1%;
+	border-radius: 10px;
+
+	&& .row
+	{
+		display: flex;
+		align-items: flex-start;
+		margin: 3px 50px;
+	}
+
+	&& .ball{
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-width: 0.15px;
+		border-style: solid;
+	}
+}
+
+
+
+@keyframes heartbeat {
+	0%
+	{
+		background-color: rgb(159, 159, 159);
+	}
+	100%
+	{
+		background-color: rgb(213, 213, 213);
+	}
+
+
 }
