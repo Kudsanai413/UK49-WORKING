@@ -425,6 +425,13 @@ main
 }
 
 
+footer
+{
+	background-color: rgb(0,0,145);
+	color: white;
+}
+
+
 
 @keyframes heartbeat {
 	0%
