@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/UK49-WORKING/static/css/main.e1843111.css",
+    "main.js": "/UK49-WORKING/static/js/main.3954cfa3.js",
+    "index.html": "/UK49-WORKING/index.html",
+    "main.e1843111.css.map": "/UK49-WORKING/static/css/main.e1843111.css.map",
+    "main.3954cfa3.js.map": "/UK49-WORKING/static/js/main.3954cfa3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e1843111.css",
+    "static/js/main.3954cfa3.js"
+  ]
+}
